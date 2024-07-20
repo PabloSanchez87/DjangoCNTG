@@ -1,6 +1,13 @@
 Primeros pasos:
-# Instrucciones para poder ejecutar nuestra aplicación
+# Material de apoyo para Django Framework
+- [Framework Web Django](https://developer.mozilla.org/es/docs/Learn/Server-side/Django)
+- [Documentacion Django Project](https://www.djangoproject.com/)
 
+--- 
+<br>
+![Django](media/Django.png)
+
+# Instrucciones para poder ejecutar nuestra aplicación
 ## Creación entorno virtual
 - Crear el entorno virtual: virtualenv my_django_app
 - Entrar en el entorno virtual: source my_django_app/bin/activate
