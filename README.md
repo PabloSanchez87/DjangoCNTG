@@ -5,7 +5,10 @@ Primeros pasos:
 
 --- 
 <br>
+
 ![Django](media/Django.png)
+
+---
 
 # Instrucciones para poder ejecutar nuestra aplicación
 ## Creación entorno virtual
