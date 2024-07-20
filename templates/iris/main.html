@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<html>
+    <body>
+        {% load i18n %}
+        <h1>{% trans "Iris Dataset" %}</h1>
+        <br>
+        <h3>{% trans "· All Data:" %}</h3>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <table class="table table-hover">
+            <tr>
+                <td></td>
+                <td><label>{% trans "Sepal Length" %}</label></td>
+                <td><label>{% trans "Sepal Width" %}</label></td>
+                <td><label>{% trans "Petal Length" %}</label></td>
+                <td><label>{% trans "Petal Width" %}</label></td>
+                <td><label>{% trans "Species"%}</label></td>
+                <td><label></label></td>
+                <td><label></label></td>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <td><strong>{{ item.id }}</strong></td>
+                    <td>{{ item.sepal_length }}</td>
+                    <td>{{ item.sepal_width }}</td>
+                    <td>{{ item.petal_length }}</td>
+                    <td>{{ item.petal_width }}</td>
+                    <td>{{ item.species }}</td>
+                    <td>
+                        <a href="{% url 'updateData' item.id %}" class="btn btn-primary">Update</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'deleteData' item.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+{% endblock %}

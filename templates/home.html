@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+{% load i18n %}
+<h1>{% trans "Django Home" %}</h1>
+
+  <p>{% trans "Welcome to " %}<em>{% trans "Django appplication" %}</em>{% trans ", a very basic Django website developed as a tutorial example on the CTNG MasterClass." %}</p>
+
+<h2>{% trans "Dynamic content" %}</h2>
+
+    <p>{% trans "Example data:" %}</p>
+    <div style="width:100%">
+        <div style="float:left;width:50%">
+            <ul>
+                <li><strong>{% trans "Sepal length in cm:" %}</strong> {{ sepal_length }}</li>
+                <li><strong>{% trans "sepal width in cm:" %}</strong> {{ sepal_width }}</li>
+                <li><strong>{% trans "Petal length in cm:" %}</strong> {{ petal_length }}</li>
+                <li><strong>{% trans "Petal width in cm:" %}</strong> {{ petal_width }}</li>
+                <li><strong>{% trans "Class:" %}</strong> {{ class }}</li>
+            </ul>
+        </div>
+        <div style="float:right;width:50%">
+            <img src="{% static 'images/logo_cntg.png' %}" alt="logo" style="width: 60;">
+            <img src="{% static 'images/logo_cas.png' %}" alt="logoCas" width="100" height="100" >
+        </div>
+        <div style="float:center;width:50%">
+          <img src="{% static 'images/iris.png' %}" alt="irisimage" width="800" height="500">
+      </div>
+    </div>
+{% endblock %}
